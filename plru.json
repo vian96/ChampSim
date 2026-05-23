@@ -74,7 +74,7 @@
   "L2C": {
     "sets": 1024,
     "ways": 8,
-    "replacement": "lru",
+    "replacement": "plru",
     "rq_size": 32,
     "wq_size": 32,
     "pq_size": 16,
