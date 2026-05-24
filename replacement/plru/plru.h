@@ -9,7 +9,7 @@
 #include "cache.h"
 #include "modules.h"
 
-class pseudo_lru : public champsim::modules::replacement
+class plru : public champsim::modules::replacement
 {
   const long NUM_SET;
   const long NUM_WAY;
@@ -29,9 +29,9 @@ class pseudo_lru : public champsim::modules::replacement
   }
 
 public:
-  explicit pseudo_lru(CACHE* cache) : pseudo_lru(cache, cache->NUM_SET, cache->NUM_WAY) {}
+  explicit plru(CACHE* cache) : plru(cache, cache->NUM_SET, cache->NUM_WAY) {}
 
-  pseudo_lru(CACHE* cache, long sets, long ways)
+  plru(CACHE* cache, long sets, long ways)
       : replacement(cache), NUM_SET(sets), NUM_WAY(ways), num_levels(lg2(ways)), tree_bits(static_cast<std::size_t>(sets), 0)
   {
     // Tree-PLRU requires power-of-two associativity
