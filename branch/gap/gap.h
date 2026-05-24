@@ -34,8 +34,6 @@ class gap : champsim::modules::branch_predictor
 public:
   using branch_predictor::branch_predictor;
 
-#include "gap.h"
-
   /**
    * Predicts the branch direction based on the Global History and Branch Address.
    *
